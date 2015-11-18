@@ -1,0 +1,59 @@
+<!doctype html>
+
+<!-- ASSIGN OUR todoApp ANGULAR MODULE -->
+<html ng-app="todoApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fabian's MEAN Todo app</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+</head>
+
+<body style = "padding-top:50px;" ng-controller="todoController">
+    <div class="container">
+	
+		<!-- HEADER AND TODO COUNT -->
+        <div class="jumbotron text-center">
+            <h1>My ToDo List <span class="label label-info">{{ todos.length }}</span></h1>
+        </div>
+
+        <!-- TODO LIST -->
+        <div id="todo-list" style="margin-bottom:30px;" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <div class="checkbox" ng-repeat="todo in todos">
+                    <label>
+                        <input type="checkbox"> 
+						<label>{{ todo.text }}</label>
+						<button class="close" ng-click="deleteTodo(todo._id)">&times;</button>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FORM TO CREATE TODOS -->
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input type="text" class="form-control input-lg text-center" placeholder="Things I need to remember" ng-model="formData.text">
+                    </div>
+
+                    <!-- createToDo() WILL CREATE NEW TODOS -->
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script src="core.js"></script>
+
+</body>
+</html>

@@ -1,20 +1,15 @@
 
 
-# TestApp
+# Application
+This is a Todo list application
 
-
+All the files needed for execution are inside the myTodoApp folder
 
 ## Usage
-
+It can be used to save tasks for day to day routines
 
 
 ## Developing
+This applicaition is created in MEAN stack. Connection for MongoDB is done through mongoose library in nodejs
 
 
-
-### Tools
-
-Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)
- ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))   
-
-Nodeclipse is free open-source project that grows with your contributions.
